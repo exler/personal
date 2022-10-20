@@ -1,0 +1,22 @@
+.projects_container {
+    margin-top: 1rem;
+}
+
+.project {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.projects_title {
+    color: #e7e3e1;
+}
+
+.project_index_sup {
+    color: #9b9897;
+    font-size: 0.8rem;
+    margin-right: 6px;
+}
+
+.project_name {
+    color: #e7e3e1;
+}

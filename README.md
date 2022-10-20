@@ -1,2 +1,3 @@
 # personal
-Personal website &amp; blog
+
+Personal website
