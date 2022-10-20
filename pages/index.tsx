@@ -13,7 +13,7 @@ const Home: NextPage = () => {
           <div>
             <h2>Software Engineer // Solutions Architect</h2>
             <p>
-              I specialize in development of <mark>high-performance</mark> and <mark>maintanable</mark> digital products
+              I specialize in development of <mark>high-performance</mark> and <mark>maintanable</mark> digital products,
               with expertise in <mark>pragmatic system design</mark> and <mark>rapid prototyping</mark>.
             </p>
           </div>
