@@ -5,7 +5,7 @@ function ProjectLink({ index, href, children }: { index: number, href: string, c
     return (
         <h5 className={styles.project}>
             <sup className={styles.project_index_sup}>{String(index).padStart(2, '0')}</sup>
-            <Link href={href}><a className={styles.project_name}>{children}</a></Link>
+            <Link href={href} className={styles.project_name}>{children}</Link>
         </h5>
     )
 }
