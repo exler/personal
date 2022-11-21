@@ -55,6 +55,7 @@ export default function PostPage({ data, content }: { data: Post["data"], conten
                 <Image
                     src={data.image}
                     alt=""
+                    unoptimized
                     layout="fill"
                     loading="eager"
                 />

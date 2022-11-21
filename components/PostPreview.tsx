@@ -13,6 +13,7 @@ export default function PostPreview({ post }: { post: Post }) {
                         <Image
                             src={post.data.image}
                             alt=""
+                            unoptimized
                             layout="fill"
                             className="transition-all"
                         />

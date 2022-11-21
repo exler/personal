@@ -6,13 +6,25 @@ import Layout from '@/components/Layout'
 import ShapeImage from '@/public/shape.png'
 import Divider from '@/components/Divider'
 import Project from '@/components/Project'
+import { getPosts, Post } from '@/utils/posts'
+import PostPreview from '@/components/PostPreview'
 
-export default function Home() {
+export const getStaticProps = async () => {
+    const posts = getPosts();
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};
+
+export default function Home({ posts }: { posts: Post[] }) {
     return (
         <Layout>
             <Container>
                 <div className="flex flex-col items-center">
-                    <Image src={ShapeImage} alt="" width={64} height={64} />
+                    <Image className="hidden md:block" src={ShapeImage} alt="" width={64} height={64} />
                     <div className="mt-4">
                         <h2 className="text-2xl">Kamil Marut <span className="text-secondary">//</span> Software Engineer</h2>
                     </div>
@@ -43,7 +55,13 @@ export default function Home() {
                 </div>
             </Container>
             <Divider text="Latest posts" />
-
+            <Container>
+                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {posts.slice(0, 3).map((post) => (
+                        <PostPreview key={post.slug} post={post} />
+                    ))}
+                </div>
+            </Container>
         </Layout>
     )
 }
