@@ -19,7 +19,8 @@ export default function Footer() {
                     </Link>
                     <span className="mt-1 text-sm text-center text-gray-400 dark:text-gray-500">
                         · <Link href="https://github.com/exler" rel="noopener" target="_blank">GitHub</Link>&nbsp;
-                        · <Link href="https://linkedin.com/in/kamilmarut" rel="noopener" target="_blank">LinkedIn</Link>
+                        · <Link href="https://linkedin.com/in/kamilmarut" rel="noopener" target="_blank">LinkedIn</Link>&nbsp;
+                        · <Link href="https://kamilmarut.com/rss.xml" rel="noopener" target="_blank">RSS</Link>
                     </span>
                 </div>
                 <ThemeSwitch />

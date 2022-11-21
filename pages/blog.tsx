@@ -2,8 +2,10 @@ import Container from "@/components/Container";
 import Layout from "@/components/Layout";
 import PostPreview from "@/components/PostPreview";
 import { Post, getPosts } from "@/utils/posts";
+import { generateRSSFeed } from "@/utils/rss";
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
+    await generateRSSFeed();
     const posts = getPosts();
 
     return {
