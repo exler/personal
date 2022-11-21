@@ -1,14 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Header from '../components/Header'
+import { ThemeProvider } from 'next-themes'
 
-function MyApp({ Component, pageProps }: AppProps) {
+
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="container">
-      <Header />
+    <ThemeProvider attribute="class">
       <Component {...pageProps} />
-    </div>
+    </ThemeProvider>
   )
 }
-
-export default MyApp
