@@ -22,7 +22,7 @@ export async function generateRSSFeed() {
             title: post.data.title,
             description: post.data.description,
             url: `https://kamilmarut.com/blog/${post.slug}`,
-            date: parse(post.data.date + ' 13', 'do MMMM, yyyy H', new Date()),
+            date: parse(post.data.date, 'do MMMM, yyyy', new Date()),
         })
     })
 

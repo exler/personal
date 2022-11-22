@@ -44,8 +44,8 @@ export default function Navbar() {
                                 </div>
                                 <div className="flex items-center justify-between w-full md:w-auto">
                                     <Link href="/">
-                                        <Image src={LightLogoImage} alt="Kamil Marut" width={64} priority={true} className="dark:hidden" />
-                                        <Image src={DarkLogoImage} alt="Kamil Marut" width={64} priority={true} className="hidden dark:block" />
+                                        <Image src={LightLogoImage} alt="Kamil Marut" width={48} priority={true} className="dark:hidden" />
+                                        <Image src={DarkLogoImage} alt="Kamil Marut" width={48} priority={true} className="hidden dark:block" />
                                     </Link>
                                     <Disclosure.Button
                                         aria-label="Toggle Menu"
