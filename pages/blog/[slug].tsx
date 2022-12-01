@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { getPost, getPosts, Post } from "@/utils/posts";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import { NextSeo } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,6 +32,11 @@ export const getStaticProps = async ({ params }: { params: { slug: string } }) =
 export default function PostPage({ data, content }: { data: Post["data"], content: any }) {
     return (
         <Layout>
+            <NextSeo
+                title={data.title}
+                description={data.description}
+            />
+
             <Container>
                 <div className="max-w-screen-md mx-auto">
                     <div className="flex justify-center">
