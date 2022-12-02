@@ -4,5 +4,9 @@
 
 html {
     font-size: 1.2rem;
+    background: #ffffff;
+}
+
+html.dark {
     background: #1a1a1a;
 }

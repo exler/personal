@@ -17,7 +17,7 @@ export default function Footer() {
                         <Image src={LightLogoImage} alt="Kamil Marut" width={32} className="dark:hidden" />
                         <Image src={DarkLogoImage} alt="Kamil Marut" width={32} className="hidden dark:block" />
                     </Link>
-                    <span className="mt-1 text-sm text-center text-gray-400 dark:text-gray-500">
+                    <span className="mt-1 text-sm text-center text-gray-800 dark:text-gray-500">
                         · <Link href="https://github.com/exler" rel="noopener" target="_blank">GitHub</Link>&nbsp;
                         · <Link href="https://linkedin.com/in/kamilmarut" rel="noopener" target="_blank">LinkedIn</Link>&nbsp;
                         · <Link href="https://kamilmarut.com/rss.xml" rel="noopener" target="_blank">RSS</Link>
