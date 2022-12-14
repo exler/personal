@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 import AvatarImage from '@/public/me.png'
+import Link from 'next/link'
 
 export default function About() {
     return (
@@ -21,6 +22,29 @@ export default function About() {
                     </div>
                     <div>
                         <Image className="border-2 border-primary" src={AvatarImage} alt="" width={356} />
+                    </div>
+                </div>
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-10">
+                    <div className="w-1/5">
+                        <svg className="w-2/3 h-2/3 text-center mx-auto fill-primary" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28,12H20V4h8Zm-6-2h4V6H22Z" />
+                            <path d="M17,15V9H9V23H23V15Zm-6-4h4v4H11Zm4,10H11V17h4Zm6,0H17V17h4Z" />
+                            <path d="M26,28H6a2.0023,2.0023,0,0,1-2-2V6A2.0023,2.0023,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0023,2.0023,0,0,1,26,28Z" />
+                        </svg>
+                    </div>
+                    <div className="flex-1">
+                        <h2 className="text-2xl text-primary text-right">Consulting</h2>
+                        <p className="my-2">
+                            I am available for consulting and contract work. I specialize in financial services, payment processing and risk management, but I have experience in a wide range of industries.
+                            <br />
+                            <br />
+                            Feel free to get in touch if you have a project you would like to discuss.
+                        </p>
+                        <Link title="Email" href="mailto:kamil@kamilmarut.com">
+                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                            </svg>
+                        </Link>
                     </div>
                 </div>
                 <div className="flex flex-col items-center">
