@@ -48,8 +48,8 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
       - name: Install dependencies
         run: yarn install
-      - name: Build with Next.js
-        run: yarn next build
+      - name: Build static site
+        run: yarn build
       - name: Static HTML export with Next.js
         run: yarn next export
       - name: Upload artifact
