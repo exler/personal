@@ -49,9 +49,9 @@ export default function Home({ posts }: { posts: Post[] }) {
             </Container>
             <Divider text="Featured Projects" />
             <Container>
-                <div className="flex flex-row items-center gap-4">
-                    <Project name="CILISSA" href="https://github.com/exler/CILISSA" imageSrc="/projects/cilissa.png" />
-                    <Project name="NitroRSS" href="https://github.com/exler/NitroRSS" imageSrc="/projects/nitrorss.png" />
+                <div className="flex flex-col gap-4">
+                    <Project name="CILISSA" href="https://github.com/exler/CILISSA" imageSrc="/projects/cilissa.png" description="Interactive tool for assessing digital image similarity" />
+                    <Project name="NitroRSS" href="https://github.com/exler/NitroRSS" imageSrc="/projects/nitrorss.png" description="Real-time RSS and Atom feeds delivered to your email" />
                 </div>
             </Container>
             <Divider text="Latest posts" />
