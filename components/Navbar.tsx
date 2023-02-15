@@ -6,27 +6,20 @@ import DarkLogoImage from '@/public/logo-dark.png'
 import LightLogoImage from '@/public/logo-light.png'
 
 export default function Navbar() {
-    const leftMenu = [
+    const menu = [
         {
             label: "Home",
             href: "/"
         },
         {
-            label: "About",
-            href: "/about"
-        },
-    ]
-    const rightMenu = [
-        {
-            label: "Projects",
-            href: "/projects"
+            label: "Consulting",
+            href: "/consulting"
         },
         {
             label: "Blog",
             href: "/blog"
         },
     ]
-    const mobileMenu = [...leftMenu, ...rightMenu]
 
     return (
         <Container>
@@ -35,13 +28,6 @@ export default function Navbar() {
                     {({ open }) => (
                         <>
                             <div className="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
-                                <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:order-none md:flex-1">
-                                    {leftMenu.map((item, index) => (
-                                        <Link href={item.href} key={index} className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
                                 <div className="flex items-center justify-between w-full md:w-auto">
                                     <Link href="/">
                                         <Image src={LightLogoImage} alt="Kamil Marut" width={48} priority={true} className="dark:hidden" />
@@ -69,8 +55,8 @@ export default function Navbar() {
                                         </svg>
                                     </Disclosure.Button>
                                 </div>
-                                <div className="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:w-auto md:flex-1 md:order-none">
-                                    {rightMenu.map((item, index) => (
+                                <div className="flex-col items-center justify-start order-1 hidden w-full md:flex md:flex-row md:justify-end md:w-auto md:flex-1 md:order-none">
+                                    {menu.map((item, index) => (
                                         <Link href={item.href} key={index} className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
                                             {item.label}
                                         </Link>
@@ -79,7 +65,7 @@ export default function Navbar() {
                             </div>
                             <Disclosure.Panel>
                                 <div className="flex flex-col items-center justify-start order-2 w-full md:hidden">
-                                    {mobileMenu.map((item, index) => (
+                                    {menu.map((item, index) => (
                                         <Link href={item.href} key={index} className="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500">
                                             {item.label}
                                         </Link>

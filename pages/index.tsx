@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
+import AvatarImage from '@/public/me.png'
 import ShapeImage from '@/public/shape.png'
 import Divider from '@/components/Divider'
-import Project from '@/components/Project'
 import { getPosts, Post } from '@/utils/posts'
 import PostPreview from '@/components/PostPreview'
 
@@ -47,14 +47,26 @@ export default function Home({ posts }: { posts: Post[] }) {
                     </div>
                 </div>
             </Container>
-            <Divider text="Featured Projects" />
+            <Divider text="About Me" />
             <Container>
-                <div className="flex flex-col gap-4">
-                    <Project name="CILISSA" href="https://github.com/exler/CILISSA" imageSrc="/projects/cilissa.png" description="Interactive tool for assessing digital image similarity" />
-                    <Project name="NitroRSS" href="https://github.com/exler/NitroRSS" imageSrc="/projects/nitrorss.png" description="Real-time RSS and Atom feeds delivered to your email" />
+                <div className="flex flex-col md:flex-row justify-between gap-8">
+                    <div className="flex-1">
+                        <h4 className="text-sm text-gray-800 dark:text-gray-400">Hey, I&apos;m Kamil 🖐</h4>
+                        <h2 className="text-2xl text-primary">Software Engineer & Solutions Architect</h2>
+                        <p className="mt-2">
+                            I am a software engineer specializing in development of <mark className="bg-primary">high-performance</mark> and <mark className="bg-primary">maintainable</mark> digital products,
+                            with expertise in <mark className="bg-primary">pragmatic system design</mark> and <mark className="bg-primary">rapid prototyping</mark>.
+                            <br />
+                            <br />
+                            I have a pragmatic approach that focuses on simplicity and results. Likewise, <mark className="bg-primary">I deliver on time and on budget.</mark>
+                        </p>
+                    </div>
+                    <div>
+                        <Image className="border-2 border-primary" src={AvatarImage} alt="" width={248} />
+                    </div>
                 </div>
             </Container>
-            <Divider text="Latest posts" />
+            <Divider text="Latest Posts" />
             <Container>
                 <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                     {posts.slice(0, 3).map((post) => (

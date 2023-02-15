@@ -8,22 +8,7 @@ export default function About() {
     return (
         <Layout>
             <Container>
-                <div className="flex flex-col md:flex-row justify-between gap-8">
-                    <div className="flex-1">
-                        <h4 className="text-sm text-gray-800 dark:text-gray-400">Hey, I&apos;m Kamil 🖐</h4>
-                        <h2 className="text-2xl text-primary">Software Engineer & Solutions Architect</h2>
-                        <p className="mt-2">
-                            I am a software engineer specializing in development of <mark className="bg-primary">high-performance</mark> and <mark className="bg-primary">maintainable</mark> digital products,
-                            with expertise in <mark className="bg-primary">pragmatic system design</mark> and <mark className="bg-primary">rapid prototyping</mark>.
-                            <br />
-                            <br />
-                            I have a pragmatic approach that focuses on simplicity and results. Likewise, <mark className="bg-primary">I deliver on time and on budget.</mark>
-                        </p>
-                    </div>
-                    <div>
-                        <Image className="border-2 border-primary" src={AvatarImage} alt="" width={356} />
-                    </div>
-                </div>
+                <h2 className="text-2xl text-primary mt-10 text-center">Consulting</h2>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-10">
                     <div className="w-1/5">
                         <svg className="w-2/3 h-2/3 text-center mx-auto fill-primary" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +18,6 @@ export default function About() {
                         </svg>
                     </div>
                     <div className="flex-1">
-                        <h2 className="text-2xl text-primary text-right">Consulting</h2>
                         <p className="my-2">
                             I am available for consulting and contract work. I specialize in financial services, payment processing and risk management, but I have experience in a wide range of industries.
                             <br />
