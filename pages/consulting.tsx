@@ -9,7 +9,7 @@ export default function About() {
         <Layout>
             <Container>
                 <h2 className="text-2xl text-primary mt-10 text-center">Consulting</h2>
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-10">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="w-1/5">
                         <svg className="w-2/3 h-2/3 text-center mx-auto fill-primary" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <path d="M28,12H20V4h8Zm-6-2h4V6H22Z" />
