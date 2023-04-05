@@ -7,7 +7,7 @@ interface Props {
 
 export default function Container(props: Props) {
     return (
-        <div className={mergeClasses("container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg", props.className)}>
+        <div className={mergeClasses("container px-8 py-4 lg:py-6 mx-auto xl:px-5 max-w-screen-lg", props.className)}>
             {props.children}
         </div>
     )

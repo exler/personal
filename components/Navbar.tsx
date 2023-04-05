@@ -14,11 +14,7 @@ export default function Navbar() {
         {
             label: "Consulting",
             href: "/consulting"
-        },
-        {
-            label: "Blog",
-            href: "/blog"
-        },
+        }
     ]
 
     return (

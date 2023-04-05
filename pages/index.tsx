@@ -6,20 +6,9 @@ import Layout from '@/components/Layout'
 import AvatarImage from '@/public/me.png'
 import ShapeImage from '@/public/shape.png'
 import Divider from '@/components/Divider'
-import { getPosts, Post } from '@/utils/posts'
-import PostPreview from '@/components/PostPreview'
 
-export const getStaticProps = async () => {
-    const posts = getPosts();
 
-    return {
-        props: {
-            posts,
-        },
-    };
-};
-
-export default function Home({ posts }: { posts: Post[] }) {
+export default function Home() {
     return (
         <Layout>
             <Container>
@@ -64,14 +53,6 @@ export default function Home({ posts }: { posts: Post[] }) {
                     <div>
                         <Image className="border-2 border-primary" src={AvatarImage} alt="" width={248} />
                     </div>
-                </div>
-            </Container>
-            <Divider text="Latest Posts" />
-            <Container>
-                <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {posts.slice(0, 3).map((post) => (
-                        <PostPreview key={post.slug} post={post} />
-                    ))}
                 </div>
             </Container>
         </Layout>

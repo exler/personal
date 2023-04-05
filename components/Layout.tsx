@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 import Footer from './Footer'
 import Navbar from './Navbar'
-import { Work_Sans } from '@next/font/google'
+import { Work_Sans } from 'next/font/google'
 import { mergeClasses } from '@/utils/helpers'
 
 const work_sans = Work_Sans()

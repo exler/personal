@@ -8,7 +8,7 @@ export default function About() {
     return (
         <Layout>
             <Container>
-                <h2 className="text-2xl text-primary mt-10 text-center">Consulting</h2>
+                <h2 className="text-2xl text-primary text-center">Consulting</h2>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="w-1/5">
                         <svg className="w-2/3 h-2/3 text-center mx-auto fill-primary" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ export default function About() {
                     </div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <h2 className="text-2xl text-primary mt-10">Tools</h2>
+                    <h2 className="text-2xl text-primary mt-8">Tools</h2>
                     <p className="text-sm text-gray-800 dark:text-gray-400">This is my preferred toolkit, however I am always learning and open to new technologies!</p>
                     <div className="mt-4 flex flex-row flex-wrap gap-1 md:gap-4">
                         <div className="text-center w-20">
