@@ -1,6 +1,5 @@
 ---
 import Container from "../components/Container.astro";
-import Divider from "../components/Divider.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -11,8 +10,8 @@ import Layout from "../layouts/Layout.astro";
 				class="hidden md:block"
 				src="/shape.png"
 				alt=""
-				width={64}
-				height={64}
+				width="64"
+				height="64"
 			/>
 			<div class="mt-4">
 				<h2 class="text-2xl">
@@ -69,13 +68,17 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</div>
 	</Container>
-	<Divider text="About Me" />
+	<div
+		class="container max-w-screen-lg mx-auto relative flex py-2 items-center"
+	>
+		<div class="flex-grow border-t border-gray-500"></div>
+		<span class="flex-shrink mx-4 text-gray-500 text-sm">About Me</span>
+		<div class="flex-grow border-t border-gray-500"></div>
+	</div>
 	<Container class="py-4 lg:py-6">
 		<div class="flex flex-col md:flex-row justify-between gap-8">
 			<div class="flex-1">
-				<h4 class="text-sm text-gray-800 dark:text-gray-400">
-					Hey, I&apos;m Kamil 🖐
-				</h4>
+				<h4 class="text-sm text-gray-400">Hey, I&apos;m Kamil 🖐</h4>
 				<h2 class="text-2xl text-primary">
 					Software Engineer & Solutions Architect
 				</h2>

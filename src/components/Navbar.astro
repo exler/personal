@@ -18,12 +18,12 @@ const menu = [
         <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
             <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="/">
-                    <img src="/logo-dark.png" alt="Kamil Marut" width={48} />
+                    <img src="/logo-dark.png" alt="Kamil Marut" width="48" />
                 </a>
                 <button
                     id="menuToggle"
                     aria-label="Toggle Menu"
-                    class="px-2 py-1 ml-auto text-gray-500 rounded-md md:hidden focus:text-blue-500 focus:outline-none dark:text-gray-300"
+                    class="px-2 py-1 ml-auto rounded-md md:hidden focus:text-blue-500 focus:outline-none text-gray-300"
                 >
                     <svg
                         id="menuIcon"
@@ -46,7 +46,7 @@ const menu = [
                     menu.map((item, index) => (
                         <a
                             href={item.href}
-                            class="px-5 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-blue-500"
+                            class="px-5 py-2 text-sm font-medium text-gray-400 hover:text-blue-500"
                         >
                             {item.label}
                         </a>
