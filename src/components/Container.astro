@@ -1,0 +1,14 @@
+---
+import { mergeClasses } from "../utils/helpers";
+
+const { class: className } = Astro.props;
+---
+
+<div
+    class={mergeClasses(
+        "container px-8 mx-auto xl:px-5 max-w-screen-lg",
+        className
+    )}
+>
+    <slot />
+</div>
