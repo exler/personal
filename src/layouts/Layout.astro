@@ -3,50 +3,49 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { SEO } from "astro-seo";
 export interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
 
-		<SEO
-			title={title}
-			description="Software engineer specializing in development of high-performance and maintainable digital products."
-			canonical="https://kamilmarut.com"
-			openGraph={{
-				basic: {
-					url: "https://kamilmarut.com",
-					title: "Kamil Marut",
-					image: "https://kamilmarut.com/thumbnail.png",
-					type: "website",
-				},
-				optional: {
-					description:
-						"Software engineer specializing in development of high-performance and maintainable digital products.",
-					siteName: "Kamil Marut",
-				},
-			}}
-		/>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-		<link rel="preconnect" href="https://fonts.bunny.net" />
-		<link
-			href="https://fonts.bunny.net/css?family=work-sans:400"
-			rel="stylesheet"
-		/>
-	</head>
-	<body class="antialiased dark bg-background text-gray-400">
-		<div>
-			<Navbar />
-			<div>
-				<slot />
-			</div>
-			<Footer />
-		</div>
-	</body>
+        <SEO
+            title={title}
+            description="Software engineer specializing in development of high-performance and maintainable digital products."
+            canonical="https://kamilmarut.com"
+            openGraph={{
+                basic: {
+                    url: "https://kamilmarut.com",
+                    title: "Kamil Marut",
+                    image: "https://kamilmarut.com/thumbnail.png",
+                    type: "website"
+                },
+                optional: {
+                    description:
+                        "Software engineer specializing in development of high-performance and maintainable digital products.",
+                    siteName: "Kamil Marut"
+                }
+            }}
+        />
+
+        <link rel="preconnect" href="https://fonts.bunny.net" />
+        <link href="https://fonts.bunny.net/css?family=work-sans:400" rel="stylesheet" />
+    </head>
+    <body class="antialiased dark bg-background text-gray-400">
+        <div>
+            <Navbar />
+            <div>
+                <slot />
+            </div>
+            <Footer />
+        </div>
+    </body>
 </html>
