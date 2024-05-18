@@ -24,7 +24,7 @@ const menu = [
     <nav>
         <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
             <div class="flex items-center justify-between w-full md:w-auto">
-                <a href="/">
+                <a href="/" data-astro-prefetch>
                     <img src="/logo-dark.png" alt="Kamil Marut" width="48" />
                 </a>
                 <button
@@ -55,6 +55,7 @@ const menu = [
                             href={item.href}
                             class="px-5 py-2 text-sm font-medium text-gray-400 hover:text-primary"
                             target={item.external ? "_blank" : "_self"}
+                            data-astro-prefetch={item.external ? "false" : "hover"}
                         >
                             {item.label}{" "}
                             {item.external && (
