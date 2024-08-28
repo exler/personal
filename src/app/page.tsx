@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Libre_Barcode_128_Text } from "next/font/google";
+import { Staatliches } from "next/font/google";
 import clsx from "clsx";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 import { FaMapMarkedAlt } from "react-icons/fa";
@@ -7,13 +7,13 @@ import { MdArchitecture } from "react-icons/md";
 
 import MajikodeLogo from "@/assets/majikode-logo.png";
 
-const dafoe = Libre_Barcode_128_Text({ weight: "400", subsets: ["latin"] });
+const headingFont = Staatliches({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
     return (
         <main className="flex flex-col min-h-screen items-center justify-center">
             <div className="flex flex-col gap-4">
-                <h1 className={clsx(dafoe.className, "text-6xl text-center")}>Kamil Marut</h1>
+                <h1 className={clsx(headingFont.className, "text-4xl text-center")}>Kamil Marut</h1>
                 <span className="flex gap-2 items-center text-sm text-neutral-500">
                     <MdArchitecture />
                     Solutions Architect
