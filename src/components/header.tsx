@@ -22,14 +22,14 @@ export default function Header() {
                         <span>
                             Founder and Solutions Architect <span className="text-sm">@</span>
                         </span>
-                        <Image src={MajikodeLogo} alt="Majikode" className="w-24 h-4" />
+                        <Image src={MajikodeLogo} alt="Majikode" className="w-20 sm:w-24 h-3 sm:h-4" />
                     </div>
                     <div className="flex flex-row gap-2 items-center">
                         <span>
                             Intelligent Automation Team Lead <span className="text-sm">@</span>
                         </span>
                         <a href="https://finmatics.com" target="_blank" rel="noreferrer">
-                            <Image src={FinmaticsLogo} alt="Finmatics" className="w-24 h-5" />
+                            <Image src={FinmaticsLogo} alt="Finmatics" className="w-20 sm:w-24 h-4 sm:h-5" />
                         </a>
                     </div>
                 </div>
