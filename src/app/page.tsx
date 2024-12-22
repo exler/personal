@@ -1,51 +1,79 @@
-import Image from "next/image";
-import { Staatliches } from "next/font/google";
-import clsx from "clsx";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
-import { FaMapMarkedAlt } from "react-icons/fa";
-import { MdArchitecture } from "react-icons/md";
+import { ContactDetails } from "@/components/contact-details";
+import DividerDashed from "@/components/divider-dashed";
+import Header from "@/components/header";
+import { ProjectDetails } from "@/components/project-details";
+import Section from "@/components/section";
+import Subheading from "@/components/subheading";
+import Subtext from "@/components/subtext";
 
-import MajikodeLogo from "@/assets/majikode-logo.png";
-
-const headingFont = Staatliches({ weight: "400", subsets: ["latin"] });
-
-export default function Home() {
+export default async function Home() {
     return (
-        <main className="flex flex-col min-h-screen items-center justify-center">
-            <div className="flex flex-col gap-4">
-                <h1 className={clsx(headingFont.className, "text-4xl text-center")}>Kamil Marut</h1>
-                <span className="flex gap-2 items-center text-sm text-neutral-500">
-                    <MdArchitecture />
-                    Solutions Architect
-                </span>
-                <span className="flex gap-2 items-center text-sm text-neutral-500">
-                    <FaMapMarkedAlt />
-                    Wrocław, Poland
-                </span>
-                <div className="flex flex-row gap-4 text-2xl text-neutral-500 justify-center">
-                    <a href="mailto:kamil@kamilmarut.com" className="hover:text-yellow-500">
-                        <FaEnvelope />
-                    </a>
-                    <a href="https://github.com/exler" target="_blank" rel="noopener" className="hover:text-yellow-500">
-                        <FaGithub />
-                    </a>
-                    <a
-                        href="https://linkedin.com/in/kamilmarut"
-                        target="_blank"
-                        rel="noopener"
-                        className="hover:text-yellow-500"
-                    >
-                        <FaLinkedin />
-                    </a>
-                </div>
-                <hr className="border-white w-full" />
-                <div className="flex flex-col items-center gap-2">
-                    <span>Building digital products @</span>
-                    <a href="https://majikode.com" target="_blank" rel="noopener">
-                        <Image src={MajikodeLogo} alt="Majikode" className="w-36" />
-                    </a>
-                </div>
-            </div>
-        </main>
+        <>
+            <Header />
+            <DividerDashed className="my-4" />
+            {/* <section>TBA: Majihost and privacy-oriented services</section>
+            <section>Worldmap</section>
+            <section>Images/Gopro videos?</section> */}
+            <Section>
+                <p>
+                    Creating high-performance and maintainable digital products. Rescuing legacy, unloved and
+                    underperforming systems. Rapidly prototyping new ideas and MVPs.{" "}
+                    <span className="font-bold">Advocating for open-source, privacy-oriented software.</span>
+                </p>
+            </Section>
+            <Section>
+                <Subheading>Open-source projects</Subheading>
+                <Subtext>It feels good to scratch your own itch.</Subtext>
+                <ProjectDetails
+                    className="pt-6"
+                    items={[
+                        {
+                            title: "django-nitro-mailer",
+                            description: "📨 Django mails. Supercharged.",
+                            href: "https://github.com/majikode/django-nitro-mailer",
+                        },
+                        {
+                            title: "CILISSA",
+                            description: "🖼️ Interactive tool for assessing digital image similarity",
+                            href: "https://github.com/exler/CILISSA",
+                        },
+                        {
+                            title: "fileigloo",
+                            description: "❄️ Small and simple online file sharing & pastebin",
+                            href: "https://github.com/exler/fileigloo",
+                        },
+                        {
+                            title: "Chaterra",
+                            description: "🌎 An alternative ChatGPT frontend ",
+                            href: "https://github.com/exler/chaterra",
+                        },
+                    ]}
+                />
+            </Section>
+            <Section>
+                <Subheading>Stay in touch</Subheading>
+                <Subtext>I'm always open to interesting freelancing/consulting offers!</Subtext>
+                <ContactDetails
+                    className="pt-6"
+                    items={[
+                        {
+                            title: "Email",
+                            href: "mailto:kamil@kamilmarut.com",
+                            text: "kamil@kamilmarut.com",
+                        },
+                        {
+                            title: "GitHub",
+                            href: "https://github.com/exler",
+                            text: "github.com/exler",
+                        },
+                        {
+                            title: "LinkedIn",
+                            href: "https://www.linkedin.com/in/kamilmarut/",
+                            text: "linkedin.com/in/kamilmarut",
+                        },
+                    ]}
+                />
+            </Section>
+        </>
     );
 }
