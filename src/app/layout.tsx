@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className="dark">
-            <body className={twMerge(geistMono.className, "max-w-2xl mx-auto py-8")}>
+            <body className={twMerge(geistMono.className, "max-w-2xl mx-2 sm:mx-auto py-8")}>
                 <main>{children}</main>
                 <Footer />
             </body>

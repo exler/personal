@@ -6,12 +6,12 @@ type ProjectDetailProps = {
     href: string;
 };
 export const ProjectDetail = ({ title, description, href }: ProjectDetailProps) => (
-    <li className="flex flex-row items-center">
+    <li className="flex flex-col sm:flex-row sm:items-center">
         <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex underline hover:text-neutral-500 sm:w-48"
+            className="inline-flex underline hover:text-neutral-500 w-60 sm:w-48"
         >
             {title}
         </a>

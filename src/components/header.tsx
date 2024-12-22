@@ -15,9 +15,9 @@ export default function Header() {
             <Link href="/">
                 <Image src={SiteLogo} alt="" width={48} />
             </Link>
-            <div className="flex flex-row items-center gap-2 text-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-xl">
                 <span className="font-bold self-start">Kamil Marut.</span>
-                <div>
+                <div className="text-lg sm:text-xl">
                     <div className="flex flex-row gap-2 items-center">
                         <span>
                             Founder and Solutions Architect <span className="text-sm">@</span>
