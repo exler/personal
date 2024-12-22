@@ -41,6 +41,8 @@ jobs:
               run: bun install --frozen-lockfile
             - name: Build site
               run: bun run build
+              env:
+                NEXT_PUBLIC_MAPTILER_API_KEY: ${{ secrets.MAPTILER_API_KEY }}
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:

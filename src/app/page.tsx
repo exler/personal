@@ -5,15 +5,15 @@ import { ProjectDetails } from "@/components/project-details";
 import Section from "@/components/section";
 import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
+import WorldMap from "@/components/world-map";
 
 export default async function Home() {
     return (
         <>
             <Header />
             <DividerDashed className="my-4" />
-            {/* <section>TBA: Majihost and privacy-oriented services</section>
-            <section>Worldmap</section>
-            <section>Images/Gopro videos?</section> */}
+            {/* <section>TBA: Majihost and privacy-oriented services</section> */}
+            {/* <section>Images/Gopro videos?</section> */}
             <Section>
                 <p>
                     Creating high-performance and maintainable digital products. Rescuing legacy, unloved and
@@ -49,6 +49,11 @@ export default async function Home() {
                         },
                     ]}
                 />
+            </Section>
+            <Section>
+                <Subheading>Travel map</Subheading>
+                <Subtext>I aspire to paint this entire map someday.</Subtext>
+                <WorldMap apiKey={process.env.NEXT_PUBLIC_MAPTILER_API_KEY || "missing_key"} className="mt-6" />
             </Section>
             <Section>
                 <Subheading>Stay in touch</Subheading>
