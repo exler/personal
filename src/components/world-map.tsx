@@ -43,6 +43,7 @@ export default function WorldMap({ apiKey, className }: WorldMapProps) {
         { countryId: "ID", color: VISITED_COLOR },
         { countryId: "EG", color: VISITED_COLOR },
         { countryId: "NO", color: VISITED_COLOR },
+        { countryId: "ES", color: VISITED_COLOR },
     ];
 
     useEffect(() => {
