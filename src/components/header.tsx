@@ -22,7 +22,9 @@ export default function Header() {
                         <span>
                             Founder and Solutions Architect <span className="text-sm">@</span>
                         </span>
-                        <Image src={MajikodeLogo} alt="Majikode" className="w-20 sm:w-24 h-3 sm:h-4" />
+                        <a href="https://majikode.com" target="_blank" rel="noreferrer">
+                            <Image src={MajikodeLogo} alt="Majikode" className="w-20 sm:w-24 h-3 sm:h-4" />
+                        </a>
                     </div>
                     <div className="flex flex-row gap-2 items-center">
                         <span>
