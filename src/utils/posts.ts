@@ -15,7 +15,9 @@ export type PostMetadata = {
     date: Date | null;
 };
 
-async function getPostDataFromFile(fileContent: string): Promise<{ content: string; metadata: PostMetadata }> {
+async function getPostDataFromFile(
+    fileContent: string,
+): Promise<{ content: string; htmlContent: string; metadata: PostMetadata }> {
     // Use gray-matter to parse the frontmatter and separate the content from it
     const { content, data } = matter(fileContent);
 
@@ -23,7 +25,8 @@ async function getPostDataFromFile(fileContent: string): Promise<{ content: stri
     const processedContent = await unified().use(remarkParse).use(remarkHtml).process(content);
 
     return {
-        content: processedContent.toString(),
+        content: content,
+        htmlContent: processedContent.toString(),
         metadata: {
             title: data.title || "No title",
             keywords: data.keywords || [],
@@ -74,10 +77,11 @@ export async function getPostBySlug(slug: string) {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
-    const { content, metadata } = await getPostDataFromFile(fileContents);
+    const { content, htmlContent, metadata } = await getPostDataFromFile(fileContents);
 
     return {
         content,
+        htmlContent,
         metadata: { slug, ...metadata },
     };
 }

@@ -4,6 +4,7 @@ import Section from "@/components/section";
 import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
 import { getPostBySlug, getPosts } from "@/utils/posts";
+import type { Metadata, ResolvingMetadata } from "next";
 import { FaCalendarDay } from "react-icons/fa6";
 import { FaTag } from "react-icons/fa6";
 
@@ -12,6 +13,18 @@ export async function generateStaticParams() {
     return posts.map((post) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata(
+    { params }: { params: Promise<{ slug: string }> },
+    parent: ResolvingMetadata,
+): Promise<Metadata> {
+    const { slug } = await params;
+    const post = await getPostBySlug(slug);
+
+    return {
+        title: `${post.metadata.title} | Kamil Marut`,
+    };
 }
 
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
@@ -37,7 +50,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
                 <article
                     className="prose prose-invert prose-h2:text-lg pt-2"
                     // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>Safe blog content</explanation>
-                    dangerouslySetInnerHTML={{ __html: post.content }}
+                    dangerouslySetInnerHTML={{ __html: post.htmlContent }}
                 />
             </Section>
         </>
