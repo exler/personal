@@ -8,7 +8,7 @@ type PostLinkProps = PostMetadata & {
 
 export const PostLink = ({ slug, title, keywords, date }: PostLinkProps) => (
     <li className="flex flex-row items-center">
-        <span className="inline-flex w-20 sm:w-40">{date ? date.toLocaleDateString() : "Unknown"}</span>
+        <span className="inline-flex w-32 sm:w-40">{date ? date.toLocaleDateString() : "Unknown"}</span>
         <Link className="underline hover:text-neutral-400" href={{ pathname: `/writing/${slug}` }}>
             {title}
         </Link>
