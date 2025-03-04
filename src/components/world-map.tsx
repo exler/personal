@@ -3,8 +3,9 @@
 import maplibregl, { type ExpressionSpecification } from "maplibre-gl";
 import type React from "react";
 import { useEffect, useRef } from "react";
-import "maplibre-gl/dist/maplibre-gl.css";
 import { twMerge } from "tailwind-merge";
+
+import "maplibre-gl/dist/maplibre-gl.css";
 
 type CountryHighlight = {
     countryId: string;

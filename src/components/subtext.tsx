@@ -1,3 +1,5 @@
-export default function Subtext({ children }: { children: React.ReactNode }) {
-    return <p className="text-sm text-neutral-400">{children}</p>;
+import { twMerge } from "tailwind-merge";
+
+export default function Subtext({ children, className }: { children: React.ReactNode; className?: string }) {
+    return <p className={twMerge("text-sm text-neutral-400", className)}>{children}</p>;
 }

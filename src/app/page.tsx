@@ -1,13 +1,16 @@
 import { ContactDetails } from "@/components/contact-details";
 import DividerDashed from "@/components/divider-dashed";
 import Header from "@/components/header";
+import { PostLinks } from "@/components/post-link";
 import { ProjectDetails } from "@/components/project-details";
 import Section from "@/components/section";
 import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
-import WorldMap from "@/components/world-map";
+import { getPosts } from "@/utils/posts";
 
 export default async function Home() {
+    const posts = await getPosts();
+
     return (
         <>
             <Header />
@@ -51,9 +54,13 @@ export default async function Home() {
                 />
             </Section>
             <Section>
-                <Subheading>Travel map</Subheading>
-                <Subtext>I aspire to paint this entire map someday.</Subtext>
-                <WorldMap apiKey={process.env.NEXT_PUBLIC_MAPTILER_API_KEY || "missing_key"} className="mt-6" />
+                <Subheading>Writing</Subheading>
+                <Subtext>
+                    Scribbles and thoughts of mine, mostly on the topics of software, self-hosting, privacy and
+                    productivity.
+                </Subtext>
+
+                <PostLinks items={posts} className="pt-6" />
             </Section>
             <Section>
                 <Subheading>Stay in touch</Subheading>

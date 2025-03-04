@@ -3,25 +3,28 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev --turbopack",
         "build": "next build",
         "lint": "biome lint ./src"
     },
     "dependencies": {
-        "@mdx-js/loader": "^3.1.0",
-        "@mdx-js/react": "^3.1.0",
-        "@next/mdx": "^15.1.7",
-        "@types/mdx": "^2.0.13",
+        "gray-matter": "^4.0.3",
         "maplibre-gl": "^4.7.1",
         "next": "^15.2.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-icons": "^5.5.0",
-        "tailwind-merge": "^2.6.0"
+        "rehype-stringify": "^10.0.1",
+        "remark-html": "^16.0.1",
+        "remark-parse": "^11.0.0",
+        "remark-rehype": "^11.1.1",
+        "tailwind-merge": "^2.6.0",
+        "unified": "^11.0.5"
     },
     "devDependencies": {
         "@biomejs/biome": "1.9.4",
         "@tailwindcss/postcss": "^4.0.8",
+        "@tailwindcss/typography": "^0.5.16",
         "@types/node": "^20.17.19",
         "@types/react": "^18.3.18",
         "@types/react-dom": "^18.3.5",

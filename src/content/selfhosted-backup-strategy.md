@@ -1,7 +1,8 @@
-keywords: self-hosting, backup, docker, nfs, synology, tailscale
-date: 27-02-2025
-
-# Simplest Homelab Backup Strategy (That Came to My Mind)
+---
+title: Simplest Homelab Backup Strategy (That Came to My Mind)
+keywords: [self-hosting, backup, docker, nfs, synology, tailscale]
+date: 2025-02-27
+---
 
 ## Introduction
 
@@ -10,7 +11,7 @@ I also try to avoid making the same mistake as many other self-hosting enthusias
 
 I've been lucky enough not to lose any data (and from what I know, I've really been playing with fire, especially since I run some services on a Raspberry Pi with an SD card). But I've decided I don't want to rely on luck. Instead of having *20/20 hindsight*, I want *20/20 foresight*.
 
-![Back up yourselves, data loss is coming.](images/selfhosted-backup-strategy_intro.jpg)
+![Back up yourselves, data loss is coming.](/images/selfhosted-backup-strategy_intro.jpg)
 
 ## The Setup
 
@@ -35,7 +36,7 @@ The next best thing that came to mind was using NFS on a single shared directory
 
 I've set up a shared directory on the Synology NAS and created the following NFS rule for it:
 
-![Synology NFS Rule Configuration](images/selfhosted-backup-strategy_synology-nfs.png)
+![Synology NFS Rule Configuration](/images/selfhosted-backup-strategy_synology-nfs.png)
 
 This config allows me to mount the directory through the Tailscale network (and not through the local network) 
 
@@ -45,7 +46,7 @@ The two main "gotchas" in my setup are:
 
 I tried forcing the NFS mount to use a privileged port, but I was constantly getting "access denied" errors. I don't have any proof for this, but I think it might be related to Tailscale modifying the network traffic. I decided to enable this option as the NFS share is only accessible through the Tailscale network, so it should be secure enough.
 
-1. Use `127.0.0.1` as the client IP address if you try to connect through Tailscale. 
+2. Use `127.0.0.1` as the client IP address if you try to connect through Tailscale. 
 
 At first I was using the Tailscale IP first and that failed. Then I switched to the local IP and that worked. 
 I was pulling my hair out until I found [this Reddit thread](https://www.reddit.com/r/Tailscale/comments/p09wrh/cant_nas_mount_synology_nas/) that pointed out that the Tailscale traffic goes through the loopback interface. Thanks, Internet stranger!
@@ -62,7 +63,7 @@ If successful, then no message is shown. You can confirm the mount by running `l
 
 Of course, we don't want to run this command every time we restart the Pi. So I added the following line to the `/etc/fstab` file:
 ```
-<tailscale-ip>:/volume1/backup_machines /mnt/sylia_backup_machines nfs defaults 0 0
+<tailscale-ip>:/volume1/backup_machines /mnt/backup nfs defaults 0 0
 ```
 
 In a perfect world, this would probably do the trick. But unfortunately, Tailscale once again adds a twist to the story. The Tailscale service is not started when the `/etc/fstab` is read, so the mount fails. The simplest solution I could think of is to add a cron job that runs the mount command after a reboot.
@@ -76,7 +77,7 @@ sudo crontab -e
 
 Fortunately at the point that this cronjob runs, the Tailscale service is already started and the NFS share is mounted correctly.
 
-![Hell Yeah](images/selfhosted-backup-strategy_hell-yeah.gif)
+![Hell Yeah](/images/selfhosted-backup-strategy_hell-yeah.gif)
 
 Perfect! We now have the NFS share mounted on the Pi. 
 Now, we need to copy the data over there. But where do we copy it from? For each of the services, I store the relevant data in Docker persistent volumes. They are technically available in `/var/lib/docker/volumes`, but it is generally not recommended to access them directly. So I once again dived in search of a better way to backup those volumes. 
@@ -131,7 +132,7 @@ docker compose exec backup backup
 
 And see the files on the NAS:
 
-![Backup Success](images/selfhosted-backup-strategy_files.png)
+![Backup Success](/images/selfhosted-backup-strategy_files.png)
 
 ## Summary
 
