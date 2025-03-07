@@ -48,7 +48,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
                     </Subtext>
                 </div>
                 <article
-                    className="prose prose-invert prose-h2:text-lg pt-2"
+                    className="prose prose-invert prose-h2:text-lg prose-h3:text-base prose-h4:text-sm pt-2"
                     // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>Safe blog content</explanation>
                     dangerouslySetInnerHTML={{ __html: post.htmlContent }}
                 />
