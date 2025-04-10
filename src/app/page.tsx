@@ -6,6 +6,7 @@ import { ProjectDetails } from "@/components/project-details";
 import Section from "@/components/section";
 import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
+import { TalkLinks } from "@/components/talk-link";
 import { getPosts } from "@/utils/posts";
 
 export default async function Home() {
@@ -61,6 +62,23 @@ export default async function Home() {
                 </Subtext>
 
                 <PostLinks items={posts} className="pt-6" />
+            </Section>
+            <Section>
+                <Subheading>Talks</Subheading>
+                <Subtext>Watch me gesticulate a lot.</Subtext>
+
+                <TalkLinks
+                    items={[
+                        {
+                            title: "Demystifying Python Modules and Imports: How Imports Really Work in Python",
+                            event: "PyCon Austria 2025",
+                            date: new Date("2025-04-06"),
+                            slidesLink: "https://talks.kamilmarut.com/2025-pycon-austria/",
+                            videoLink: "https://youtu.be/qQQT88mpmms",
+                        },
+                    ]}
+                    className="pt-6"
+                />
             </Section>
             <Section>
                 <Subheading>Stay in touch</Subheading>
