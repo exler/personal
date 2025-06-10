@@ -70,6 +70,12 @@ export default async function Home() {
                 <TalkLinks
                     items={[
                         {
+                            title: "Achieving Zero-Downtime Migrations in High-Traffic Django Systems",
+                            event: "Django Vienna 06-2025",
+                            date: new Date("2025-06-11"),
+                            slidesLink: "https://talks.kamilmarut.com/2025-django-vienna/",
+                        },
+                        {
                             title: "Demystifying Python Modules and Imports: How Imports Really Work in Python",
                             event: "PyCon Austria 2025",
                             date: new Date("2025-04-06"),

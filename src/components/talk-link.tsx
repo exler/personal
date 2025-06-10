@@ -11,11 +11,11 @@ type TalkLinkProps = {
 };
 
 export const TalkLink = ({ title, event, date, slidesLink, videoLink }: TalkLinkProps) => (
-    <li className="flex flex-row items-center">
-        <span className="inline-flex w-32 sm:w-40">{event}</span>
-        <span>{title}</span>
+    <li className="grid grid-cols-[200px_1fr_40px_40px] gap-4 items-start">
+        <span className="break-words">{event}</span>
+        <span className="break-words">{title}</span>
         <a
-            className="hover:text-neutral-400"
+            className="hover:text-neutral-400 flex justify-center"
             title="Slides"
             href={slidesLink}
             target="_blank"
@@ -23,9 +23,9 @@ export const TalkLink = ({ title, event, date, slidesLink, videoLink }: TalkLink
         >
             <PiNotepadFill />
         </a>
-        {videoLink && (
+        {videoLink ? (
             <a
-                className="hover:text-neutral-400 ml-2"
+                className="hover:text-neutral-400"
                 title="Recording"
                 href={videoLink}
                 target="_blank"
@@ -33,6 +33,8 @@ export const TalkLink = ({ title, event, date, slidesLink, videoLink }: TalkLink
             >
                 <RiPresentationFill />
             </a>
+        ) : (
+            <span />
         )}
     </li>
 );
