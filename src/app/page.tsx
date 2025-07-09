@@ -51,6 +51,16 @@ export default async function Home() {
                             description: "🌎 An alternative ChatGPT frontend ",
                             href: "https://github.com/exler/chaterra",
                         },
+                        {
+                            title: "yt-transcribe",
+                            description: "✍️ Transcribe YouTube videos using AI speech recognition ",
+                            href: "https://github.com/exler/yt-transcribe",
+                        },
+                        {
+                            title: "Placemarker",
+                            description: "📍 World map to track the countries you've been to ",
+                            href: "https://github.com/exler/placemarker",
+                        },
                     ]}
                 />
             </Section>
