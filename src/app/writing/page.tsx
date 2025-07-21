@@ -7,20 +7,8 @@ import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
 import { getPosts } from "@/utils/posts";
 
-export const POSTS_PER_PAGE = 10;
-
-export default async function WritingPage({ searchParams }: { searchParams: { page?: string } }) {
-    const currentPage = Number.parseInt(searchParams.page || "1", 10);
+export default async function WritingPage() {
     const posts = await getPosts();
-
-    // Get posts with excerpts for current page
-    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-    const endIndex = startIndex + POSTS_PER_PAGE;
-    const paginatedPosts = posts.slice(startIndex, endIndex);
-
-    const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
-    const hasNextPage = currentPage < totalPages;
-    const hasPrevPage = currentPage > 1;
 
     return (
         <>
@@ -29,7 +17,7 @@ export default async function WritingPage({ searchParams }: { searchParams: { pa
 
             <Section>
                 <div className="space-y-4">
-                    {paginatedPosts.map((post) => (
+                    {posts.map((post) => (
                         <article key={post.slug}>
                             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                                 <div className="flex flex-col gap-2">
@@ -68,43 +56,6 @@ export default async function WritingPage({ searchParams }: { searchParams: { pa
                     ))}
                 </div>
             </Section>
-
-            {/* Pagination */}
-            {totalPages > 1 && (
-                <Section>
-                    <div className="flex justify-between items-center">
-                        <div>
-                            {hasPrevPage ? (
-                                <Link
-                                    href={`/writing?page=${currentPage - 1}`}
-                                    className="px-4 py-2 text-white hover:text-[#F7AC3A] underline"
-                                >
-                                    ← Previous
-                                </Link>
-                            ) : (
-                                <span className="px-4 py-2 text-neutral-400">← Previous</span>
-                            )}
-                        </div>
-
-                        <span className="text-sm text-neutral-600">
-                            Page {currentPage} of {totalPages}
-                        </span>
-
-                        <div>
-                            {hasNextPage ? (
-                                <Link
-                                    href={`/writing?page=${currentPage + 1}`}
-                                    className="px-4 py-2 text-white hover:text-[#F7AC3A] underline"
-                                >
-                                    Next →
-                                </Link>
-                            ) : (
-                                <span className="px-4 py-2 text-neutral-400">Next →</span>
-                            )}
-                        </div>
-                    </div>
-                </Section>
-            )}
 
             <DividerDashed className="my-4" />
 
