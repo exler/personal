@@ -3,7 +3,7 @@ import ChaterraLogo from "@/assets/projects/chaterra-logo.png";
 import CILISSALogo from "@/assets/projects/cilissa-logo.png";
 import DjangoNitroMailerLogo from "@/assets/projects/django-nitro-mailer-logo.png";
 import FileiglooLogo from "@/assets/projects/fileigloo.svg";
-import PlacemarkerLogo from "@/assets/projects/placemarker_logo.jpeg";
+import PlacemarkerLogo from "@/assets/projects/placemarker_logo.png";
 import YTTranscribeLogo from "@/assets/projects/yt-transcribe.webp";
 import { ContactDetails } from "@/components/contact-details";
 import DividerDashed from "@/components/divider-dashed";
