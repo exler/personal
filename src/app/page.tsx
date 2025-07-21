@@ -28,7 +28,12 @@ export default async function Home() {
                 </p>
             </Section>
             <Section>
-                <Subheading>Open-source projects</Subheading>
+                <div className="flex items-center justify-between gap-2">
+                    <Subheading>Open-source projects</Subheading>
+                    <Link href="/projects" className="text-white hover:text-[#F7AC3A] text-lg">
+                        →
+                    </Link>
+                </div>
                 <Subtext>It feels good to scratch your own itch.</Subtext>
                 <ProjectDetails
                     className="pt-6"
@@ -47,11 +52,6 @@ export default async function Home() {
                             title: "fileigloo",
                             description: "❄️ Small and simple online file sharing & pastebin",
                             href: "https://github.com/exler/fileigloo",
-                        },
-                        {
-                            title: "Chaterra",
-                            description: "🌎 An alternative ChatGPT frontend ",
-                            href: "https://github.com/exler/chaterra",
                         },
                         {
                             title: "yt-transcribe",
