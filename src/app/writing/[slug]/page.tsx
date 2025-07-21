@@ -1,12 +1,11 @@
+import type { Metadata, ResolvingMetadata } from "next";
+import { FaCalendarDay, FaTag } from "react-icons/fa6";
 import DividerDashed from "@/components/divider-dashed";
 import Header from "@/components/header";
 import Section from "@/components/section";
 import Subheading from "@/components/subheading";
 import Subtext from "@/components/subtext";
 import { getPostBySlug, getPosts } from "@/utils/posts";
-import type { Metadata, ResolvingMetadata } from "next";
-import { FaCalendarDay } from "react-icons/fa6";
-import { FaTag } from "react-icons/fa6";
 
 export async function generateStaticParams() {
     const posts = await getPosts();

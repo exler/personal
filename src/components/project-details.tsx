@@ -11,7 +11,7 @@ export const ProjectDetail = ({ title, description, href }: ProjectDetailProps) 
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex underline hover:text-neutral-500 w-60 sm:w-48"
+            className="inline-flex underline text-white hover:text-[#F7AC3A] w-60 sm:w-48"
         >
             {title}
         </a>

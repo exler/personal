@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContactDetails } from "@/components/contact-details";
 import DividerDashed from "@/components/divider-dashed";
 import Header from "@/components/header";
@@ -11,6 +12,7 @@ import { getPosts } from "@/utils/posts";
 
 export default async function Home() {
     const posts = await getPosts();
+    const latestPosts = posts.slice(0, 5); // Show only top 5 latest posts
 
     return (
         <>
@@ -65,13 +67,18 @@ export default async function Home() {
                 />
             </Section>
             <Section>
-                <Subheading>Writing</Subheading>
+                <div className="flex items-center justify-between gap-2">
+                    <Subheading>Writing</Subheading>
+                    <Link href="/writing" className="text-white hover:text-[#F7AC3A] text-lg">
+                        →
+                    </Link>
+                </div>
                 <Subtext>
                     Scribbles and thoughts of mine, mostly on the topics of software, self-hosting, privacy and
                     productivity.
                 </Subtext>
 
-                <PostLinks items={posts} className="pt-6" />
+                <PostLinks items={latestPosts} className="pt-6" />
             </Section>
             <Section>
                 <Subheading>Talks</Subheading>

@@ -1,6 +1,6 @@
-import type { PostMetadata } from "@/utils/posts";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import type { PostMetadata } from "@/utils/posts";
 
 type PostLinkProps = PostMetadata & {
     slug: string;
@@ -9,7 +9,7 @@ type PostLinkProps = PostMetadata & {
 export const PostLink = ({ slug, title, keywords, date }: PostLinkProps) => (
     <li className="flex flex-row items-center">
         <span className="inline-flex w-32 sm:w-40">{date ? date.toLocaleDateString() : "Unknown"}</span>
-        <Link className="underline hover:text-neutral-400" href={{ pathname: `/writing/${slug}` }}>
+        <Link className="underline text-white hover:text-[#F7AC3A]" href={{ pathname: `/writing/${slug}` }}>
             {title}
         </Link>
     </li>

@@ -8,7 +8,7 @@ type ContactDetailProps = {
 export const ContactDetail = ({ title, text, href }: ContactDetailProps) => (
     <li className="flex flex-row items-center">
         <span className="inline-flex w-20 sm:w-40">{title}</span>
-        <a className="underline hover:text-neutral-400" href={href} target="_blank" rel="noopener noreferrer">
+        <a className="underline text-white hover:text-[#F7AC3A]" href={href} target="_blank" rel="noopener noreferrer">
             {text}
         </a>
     </li>

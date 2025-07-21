@@ -15,7 +15,7 @@ export const TalkLink = ({ title, event, date, slidesLink, videoLink }: TalkLink
         <span className="break-words">{event}</span>
         <span className="break-words">{title}</span>
         <a
-            className="hover:text-neutral-400 flex justify-center"
+            className="text-white hover:text-[#F7AC3A] flex justify-center"
             title="Slides"
             href={slidesLink}
             target="_blank"
@@ -25,7 +25,7 @@ export const TalkLink = ({ title, event, date, slidesLink, videoLink }: TalkLink
         </a>
         {videoLink ? (
             <a
-                className="hover:text-neutral-400"
+                className="text-white hover:text-[#F7AC3A]"
                 title="Recording"
                 href={videoLink}
                 target="_blank"
