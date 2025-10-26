@@ -2,9 +2,9 @@ import { Newsreader } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
-import FinmaticsLogo from "@/assets/finmatics-logo.png";
 import SiteLogo from "@/assets/logo.png";
 import MajikodeLogo from "@/assets/majikode-logo.png";
+import WorkWaveLogo from "@/assets/workwave-logo.png";
 
 const newsreader = Newsreader({ weight: "400", subsets: ["latin"] });
 
@@ -28,20 +28,20 @@ export default function Header({ slim = false }: { slim?: boolean }) {
                                 rel="noreferrer"
                                 className="text-white hover:text-[#F7AC3A]"
                             >
-                                <Image src={MajikodeLogo} alt="Majikode" className="w-20 sm:w-24 h-3 sm:h-4" />
+                                <Image src={MajikodeLogo} alt="Majikode" className="w-24 h-4" />
                             </a>
                         </div>
                         <div className="flex flex-row gap-2 items-center">
                             <span>
-                                Intelligent Automation Team Lead <span className="text-sm">@</span>
+                                Co-Founder and CTO <span className="text-sm">@</span>
                             </span>
                             <a
-                                href="https://finmatics.com"
+                                href="https://workwave.pl"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-white hover:text-[#F7AC3A]"
                             >
-                                <Image src={FinmaticsLogo} alt="Finmatics" className="w-20 sm:w-24 h-4 sm:h-5" />
+                                <Image src={WorkWaveLogo} alt="WorkWave" className="w-24 h-3" />
                             </a>
                         </div>
                     </div>
