@@ -1,0 +1,54 @@
+---
+interface Props {
+    slim?: boolean;
+}
+
+const { slim = false } = Astro.props;
+
+import logoImg from "@/assets/logo.png";
+import majikodeLogoImg from "@/assets/majikode-logo.png";
+import workwaveLogoImg from "@/assets/workwave-logo.png";
+---
+
+<header class="flex flex-col items-start gap-4" style="font-family: 'Newsreader', serif;">
+    <a href="/">
+        <img src={logoImg.src} alt="" width="48" height="48" />
+    </a>
+    {!slim && (
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xl">
+            <h1 class="font-bold self-start">Kamil Marut.</h1>
+            <div class="text-lg sm:text-xl">
+                <div class="flex flex-row gap-2 items-center">
+                    <span>
+                        Founder and Solutions Architect <span class="text-sm">@</span>
+                    </span>
+                    <a
+                        href="https://majikode.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-white hover:text-[#F7AC3A]"
+                    >
+                        <img src={majikodeLogoImg.src} alt="Majikode" class="w-24 h-4" />
+                    </a>
+                </div>
+                <div class="flex flex-row gap-2 items-center">
+                    <span>
+                        Co-Founder and CTO <span class="text-sm">@</span>
+                    </span>
+                    <a
+                        href="https://workwave.pl"
+                        target="_blank"
+                        rel="noreferrer"
+                        class="text-white hover:text-[#F7AC3A]"
+                    >
+                        <img src={workwaveLogoImg.src} alt="WorkWave" class="w-24 h-3" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    )}
+</header>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet" />

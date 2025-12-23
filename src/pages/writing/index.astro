@@ -1,0 +1,96 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import DividerDashed from "@/components/DividerDashed.astro";
+import Section from "@/components/Section.astro";
+import Subheading from "@/components/Subheading.astro";
+import Subtext from "@/components/Subtext.astro";
+import ContactDetails from "@/components/ContactDetails.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("writing");
+const sortedPosts = posts
+    .map(post => ({
+        slug: post.id,
+        title: post.data.title,
+        date: post.data.date,
+        keywords: post.data.keywords || [],
+    }))
+    .sort((a, b) => {
+        if (a.date && b.date) {
+            return b.date.getTime() - a.date.getTime();
+        }
+        return a.date ? -1 : b.date ? 1 : 0;
+    });
+---
+
+<Layout title="Writing | Kamil Marut">
+    <Header />
+    <DividerDashed class="my-4" />
+
+    <Section>
+        <div class="space-y-4">
+            {sortedPosts.map((post) => (
+                <article>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <span class="text-xs text-neutral-500 w-20 shrink-0">
+                                    {post.date ? post.date.toLocaleDateString() : "Unknown"}
+                                </span>
+                                <a
+                                    href={`/writing/${post.slug}`}
+                                    class="text-base font-medium hover:text-neutral-600 transition-colors"
+                                >
+                                    {post.title}
+                                </a>
+                            </div>
+                            {post.keywords.length > 0 && (
+                                <div class="flex flex-wrap gap-1 sm:ml-24">
+                                    {post.keywords.map((keyword: string) => (
+                                        <span class="px-2 py-1 text-xs bg-neutral-800 text-neutral-300 rounded">
+                                            {keyword}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                        <a
+                            href={`/writing/${post.slug}`}
+                            class="text-xs text-white hover:text-[#F7AC3A] underline shrink-0 self-start"
+                        >
+                            Read the post →
+                        </a>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </Section>
+
+    <DividerDashed class="my-4" />
+
+    <Section>
+        <Subheading>Stay in touch</Subheading>
+        <Subtext>I'm always open to interesting freelancing/consulting offers!</Subtext>
+        <ContactDetails
+            class="pt-6"
+            items={[
+                {
+                    title: "Email",
+                    href: "mailto:kamil@kamilmarut.com",
+                    text: "kamil@kamilmarut.com",
+                },
+                {
+                    title: "GitHub",
+                    href: "https://github.com/exler",
+                    text: "github.com/exler",
+                },
+                {
+                    title: "LinkedIn",
+                    href: "https://www.linkedin.com/in/kamilmarut/",
+                    text: "linkedin.com/in/kamilmarut",
+                },
+            ]}
+        />
+    </Section>
+</Layout>

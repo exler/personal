@@ -1,0 +1,31 @@
+---
+interface ProjectItem {
+    title: string;
+    description: string;
+    href: string;
+}
+
+interface Props {
+    items: ProjectItem[];
+    class?: string;
+}
+
+const { items, class: className } = Astro.props;
+import { twMerge } from "tailwind-merge";
+---
+
+<ul class={twMerge("flex flex-col gap-2", className)}>
+    {items.map((item) => (
+        <li class="flex flex-col sm:flex-row sm:items-center">
+            <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex underline text-white hover:text-[#F7AC3A] w-60 sm:w-48"
+            >
+                {item.title}
+            </a>
+            <span>{item.description}</span>
+        </li>
+    ))}
+</ul>

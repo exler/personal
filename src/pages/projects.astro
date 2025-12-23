@@ -1,0 +1,125 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import DividerDashed from "@/components/DividerDashed.astro";
+import Section from "@/components/Section.astro";
+import Subheading from "@/components/Subheading.astro";
+import Subtext from "@/components/Subtext.astro";
+import ContactDetails from "@/components/ContactDetails.astro";
+
+import chaterraLogo from "@/assets/projects/chaterra-logo.png";
+import cilissaLogo from "@/assets/projects/cilissa-logo.png";
+import djangoNitroMailerLogo from "@/assets/projects/django-nitro-mailer-logo.png";
+import fileiglooLogo from "@/assets/projects/fileigloo.svg";
+import placemarkerLogo from "@/assets/projects/placemarker_logo.png";
+import ytTranscribeLogo from "@/assets/projects/yt-transcribe.webp";
+
+const PROJECTS = [
+    {
+        title: "django-nitro-mailer",
+        description: "📨 Django mails. Supercharged.",
+        homepage: "https://github.com/majikode/django-nitro-mailer",
+        logo: djangoNitroMailerLogo,
+    },
+    {
+        title: "CILISSA",
+        description: "🖼️ Interactive tool for assessing digital image similarity",
+        homepage: "https://github.com/exler/CILISSA",
+        logo: cilissaLogo,
+    },
+    {
+        title: "fileigloo",
+        description: "❄️ Small and simple online file sharing & pastebin",
+        homepage: "https://github.com/exler/fileigloo",
+        logo: fileiglooLogo,
+    },
+    {
+        title: "Chaterra",
+        description: "🌎 An alternative ChatGPT frontend ",
+        homepage: "https://github.com/exler/chaterra",
+        logo: chaterraLogo,
+    },
+    {
+        title: "yt-transcribe",
+        description: "✍️ Transcribe YouTube videos using AI speech recognition ",
+        homepage: "https://github.com/exler/yt-transcribe",
+        logo: ytTranscribeLogo,
+    },
+    {
+        title: "Placemarker",
+        description: "📍 World map to track the countries you've been to ",
+        homepage: "https://github.com/exler/placemarker",
+        logo: placemarkerLogo,
+    },
+];
+---
+
+<Layout title="Projects | Kamil Marut">
+    <Header />
+    <DividerDashed class="my-4" />
+
+    <Section>
+        <div class="space-y-4">
+            {PROJECTS.map((project) => (
+                <article>
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <div class="w-20 h-12 shrink-0 flex items-center">
+                                    <img
+                                        src={project.logo.src}
+                                        alt={`${project.title} logo`}
+                                        width="80"
+                                        height="48"
+                                        class="object-contain max-w-full max-h-full"
+                                    />
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <span class="text-base font-medium">{project.title}</span>
+                                    <span class="text-sm text-gray-300">{project.description}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {project.homepage && (
+                            <a
+                                href={project.homepage}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-xs text-white hover:text-[#F7AC3A] underline shrink-0 self-start"
+                            >
+                                See project's homepage →
+                            </a>
+                        )}
+                    </div>
+                </article>
+            ))}
+        </div>
+    </Section>
+
+    <DividerDashed class="my-4" />
+
+    <Section>
+        <Subheading>Stay in touch</Subheading>
+        <Subtext>I'm always open to interesting freelancing/consulting offers!</Subtext>
+        <ContactDetails
+            class="pt-6"
+            items={[
+                {
+                    title: "Email",
+                    href: "mailto:kamil@kamilmarut.com",
+                    text: "kamil@kamilmarut.com",
+                },
+                {
+                    title: "GitHub",
+                    href: "https://github.com/exler",
+                    text: "github.com/exler",
+                },
+                {
+                    title: "LinkedIn",
+                    href: "https://www.linkedin.com/in/kamilmarut/",
+                    text: "linkedin.com/in/kamilmarut",
+                },
+            ]}
+        />
+    </Section>
+</Layout>

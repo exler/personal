@@ -1,0 +1,385 @@
+---
+const resumeData = {
+    name: "Kamil Marut",
+    title: "Team Lead & Full-Stack Engineer",
+    email: "kamil@kamilmarut.com",
+    phone: "+48 732 008 331",
+    location: "Wrocław, Poland",
+    linkedin: "linkedin.com/in/kamilmarut",
+    github: "github.com/exler",
+    website: "kamilmarut.com",
+    summary:
+        "Experienced engineering leader and software architect with a strong record of designing scalable systems, guiding teams, and driving technical strategy across data platforms and full-stack products.",
+    experience: [
+        {
+            company: "Nearform",
+            position: "Senior Data Engineer",
+            location: "Remote",
+            startDate: "October 2025",
+            endDate: "Present",
+            highlights: [
+                "Rebuilt a legacy Python/Bash ETL into a DBT-based pipeline, cutting processing time from ~24h to a few hours, and reducing compute costs by nearly 10 times.",
+                "Provisioned and managed GCP resources using Terraform, including shared datasets, storage, and IAM setups for cross-team stakeholders.",
+                "Automated operational workflows with Python and shell scripts (e.g., deployment helpers, data-quality checks, scheduled maintenance jobs).",
+            ],
+        },
+        {
+            company: "Majikode",
+            position: "Freelance Lead Engineer & Software Architect",
+            location: "Remote",
+            startDate: "January 2023",
+            endDate: "Present",
+            highlights: [
+                "Led the development of a Django-based SaaS for digital recordkeeping and secure data sharing, deployed and scaled on AWS ECS.",
+                "Modernized a high-traffic legacy system by redesigning the cache solution and refactoring outdated code, resulting in substantial performance improvements.",
+                "Created and deployed a FastAPI service on AWS Elastic Beanstalk to provide text-to-speech functionality based on the Kokoro-82M model for a mobile game.",
+                "Completed a full-stack implementation of a transactional billing system under a tight 30-day deadline.",
+            ],
+        },
+        {
+            company: "Finmatics",
+            position: "Team Lead",
+            location: "Remote",
+            startDate: "February 2023",
+            endDate: "September 2025",
+            highlights: [
+                "Led a feature team of 10 engineers to develop the leading accounting software in the DACH region.",
+                "Partnered with product stakeholders to define, specify, and architect new features and improvements, guaranteeing efficient and accurate hand-off to engineering teams.",
+                "Guided the team through major management changes and company acquisition that came with substantial process changes.",
+            ],
+        },
+        {
+            company: "Finmatics",
+            position: "Software Engineer",
+            location: "Remote",
+            startDate: "March 2022",
+            endDate: "January 2023",
+            highlights: [
+                "Created and maintained automatic quality control of a data extraction pipeline using historical data and dynamic rule sets.",
+                "Built a customer-facing subsystem allowing users to train AI models based on their specific datasets.",
+                "Replaced Redis with DragonflyDB after comprehensive benchmarking, result in a ~2x increase in cache performance.",
+                "Served as a key contributor to the overall system architecture.",
+            ],
+        },
+    ],
+    education: [
+        {
+            institution: "Wrocław University of Science and Technology",
+            degree: "Master of Science",
+            location: "Wrocław, Poland",
+            startDate: "2022",
+            endDate: "2023",
+        },
+        {
+            institution: "Silesian University of Technology",
+            degree: "Bachelor of Science",
+            location: "Gliwice, Poland",
+            startDate: "2018",
+            endDate: "2022",
+        },
+    ],
+    skills: [
+        {
+            category: "Languages",
+            items: ["Python", "TypeScript", "SQL", "Go", "Elixir"],
+        },
+        {
+            category: "Frameworks",
+            items: ["Django", "FastAPI", "React", "Next.js", "Node.js"],
+        },
+        {
+            category: "Databases",
+            items: ["PostgreSQL", "Redis", "RabbitMQ", "Elasticsearch"],
+        },
+        {
+            category: "DevOps",
+            items: ["Docker", "Kubernetes", "AWS", "GCP", "CI/CD", "Terraform", "PyInfra"],
+        },
+    ],
+    languages: [
+        { language: "Polish", level: "Native" },
+        { language: "English", level: "Fluent" },
+        { language: "German", level: "Basic" },
+    ],
+};
+
+import logoInline from "@/assets/logo.png?inline";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kamil Marut - Resume</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: "Inter", sans-serif;
+                font-size: 10pt;
+                line-height: 1.5;
+                color: #333;
+            }
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            @media print {
+                body {
+                    print-color-adjust: exact;
+                    -webkit-print-color-adjust: exact;
+                }
+            }
+
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .page-wrapper {
+                position: relative;
+                min-height: 100vh;
+            }
+
+            .dither-effect {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 320px;
+                height: 320px;
+                background:
+                    radial-gradient(circle at 10% 10%, rgba(255, 165, 0, 0.6) 0%, transparent 50%),
+                    radial-gradient(circle at 30% 20%, rgba(255, 235, 59, 0.4) 0%, transparent 40%),
+                    radial-gradient(circle at 15% 35%, rgba(255, 165, 0, 0.3) 0%, transparent 35%);
+                mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+                opacity: 0.8;
+                z-index: 0;
+            }
+
+            .container {
+                position: relative;
+                padding: 48px 56px;
+                max-width: 800px;
+                margin: 0 auto;
+                z-index: 1;
+            }
+
+            header {
+                position: relative;
+                z-index: 1;
+                margin-bottom: 40px;
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .logo {
+                width: 48px;
+                height: 48px;
+                margin-bottom: 12px;
+                object-fit: contain;
+            }
+
+            h1 {
+                font-size: 28pt;
+                font-weight: 700;
+                margin-bottom: 4px;
+                color: #333;
+            }
+
+            .subtitle {
+                font-size: 14pt;
+                color: #666;
+            }
+
+            .contact-info {
+                text-align: right;
+                font-size: 9pt;
+                color: #666;
+                line-height: 1.8;
+            }
+
+            .section-row {
+                display: flex;
+                margin-bottom: 24px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .section-label {
+                width: 120px;
+                flex-shrink: 0;
+                font-size: 10pt;
+                font-weight: 700;
+                color: #333;
+            }
+
+            .section-content {
+                flex: 1;
+            }
+
+            .experience-item {
+                margin-bottom: 20px;
+            }
+
+            .experience-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .experience-title {
+                font-size: 11pt;
+                font-weight: 700;
+                color: #333;
+                margin-bottom: 6px;
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 16px;
+            }
+
+            li {
+                margin-bottom: 4px;
+            }
+
+            .education-item {
+                margin-bottom: 8px;
+            }
+
+            .skill-row {
+                margin-bottom: 4px;
+            }
+
+            .skill-category {
+                font-weight: 700;
+            }
+
+            .languages-row {
+                display: flex;
+                gap: 24px;
+            }
+
+            .language-item strong {
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <div class="dither-effect"></div>
+            <div class="container">
+                <header>
+                    <div class="header-content">
+                        <div>
+                            <img src={logoInline} alt="Logo" class="logo" />
+                            <h1>{resumeData.name}</h1>
+                            <p class="subtitle">{resumeData.title}, {resumeData.location}</p>
+                        </div>
+                        <div class="contact-info">
+                            <div>Mobile: {resumeData.phone}</div>
+                            <div>Email: <a href={`mailto:${resumeData.email}`}>{resumeData.email}</a></div>
+                            <div>
+                                Website: <a href={`https://${resumeData.website}`} target="_blank" rel="noreferrer"
+                                    >{resumeData.website}</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="section-row">
+                    <div class="section-label">Bio</div>
+                    <div class="section-content">
+                        <p>{resumeData.summary}</p>
+                    </div>
+                </div>
+
+                <div class="section-row">
+                    <div class="section-label">Experience</div>
+                    <div class="section-content">
+                        {
+                            resumeData.experience.map((exp) => (
+                                <div class="experience-item">
+                                    <div class="experience-title">
+                                        {exp.position}, {exp.company} ({exp.startDate} – {exp.endDate})
+                                    </div>
+                                    <ul>
+                                        {exp.highlights.map((highlight) => (
+                                            <li>{highlight}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="section-row">
+                    <div class="section-label">Education</div>
+                    <div class="section-content">
+                        {
+                            resumeData.education.map((edu) => (
+                                <div class="education-item">
+                                    <div class="experience-title">
+                                        {edu.degree}, {edu.institution} ({edu.startDate} – {edu.endDate})
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="section-row">
+                    <div class="section-label">Skills</div>
+                    <div class="section-content">
+                        {
+                            resumeData.skills.map((skill) => (
+                                <div class="skill-row">
+                                    <span class="skill-category">{skill.category}: </span>
+                                    <span>{skill.items.join(", ")}</span>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="section-row">
+                    <div class="section-label">Languages</div>
+                    <div class="section-content">
+                        <div class="languages-row">
+                            {
+                                resumeData.languages.map((lang) => (
+                                    <span class="language-item">
+                                        <strong>{lang.language}:</strong> {lang.level}
+                                    </span>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

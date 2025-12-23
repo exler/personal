@@ -1,0 +1,28 @@
+---
+interface PostItem {
+    slug: string;
+    title: string;
+    date: Date | null;
+}
+
+interface Props {
+    items: PostItem[];
+    class?: string;
+}
+
+const { items, class: className } = Astro.props;
+import { twMerge } from "tailwind-merge";
+---
+
+<ul class={twMerge("flex flex-col gap-2", className)}>
+    {items.map((item) => (
+        <li class="flex flex-row items-center">
+            <span class="inline-flex w-32 sm:w-40">
+                {item.date ? item.date.toLocaleDateString() : "Unknown"}
+            </span>
+            <a class="underline text-white hover:text-[#F7AC3A]" href={`/writing/${item.slug}`}>
+                {item.title}
+            </a>
+        </li>
+    ))}
+</ul>

@@ -1,6 +1,11 @@
 ### Visual Studio Code ###
 .vscode/
 
+### Astro ###
+# Ignore content collection generated files
+.astro
+dist/
+
 ### NextJS ###
 # Dependencies
 /node_modules
