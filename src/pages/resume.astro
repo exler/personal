@@ -101,6 +101,45 @@ const resumeData = {
         { language: "English", level: "Fluent" },
         { language: "German", level: "Basic" },
     ],
+    certifications: [
+        { name: "GCP Cloud Engineer - Associate", issuer: "Google", date: "April 2022" },
+        { name: "AWS Certified Solutions Architect - Associate", issuer: "Amazon Web Services", date: "July 2021" },
+    ],
+    projects: [
+        {
+            name: "WorkWave",
+            description: "A B2B SaaS application to introduce 'workation' as an employee benefit.",
+            highlights: [
+                "Led a team of 3 engineers to build a full-stack SaaS platform using Django and React.",
+                "Created Figma mock-ups to iterate with the client.",
+                "Set up the complete infrastructure including CI/CD pipelines, automated testing, and monitoring.",
+            ],
+            url: "workwave.pl",
+        },
+        {
+            name: "CILISSA",
+            description: "CILISSA allows for the user of various metrics to perform full-reference image comparisons.",
+            highlights: [
+                "Implemented the most popular full-reference image quality metrics, image transformations and translations",
+                "Developed an optional Qt-based graphical interface that lets you experiment with various operations, their orders and properties",
+            ],
+            url: "github.com/exler/CILISSA",
+        },
+    ],
+    talks: [
+        {
+            title: "Achieving Zero-Downtime Migrations in High-Traffic Django Systems",
+            event: "Django Vienna",
+            location: "Vienna, Austria",
+            date: "June 2025",
+        },
+        {
+            title: "Demystifying Python Modules and Imports: How Imports Really Work in Python",
+            event: "PyCon Austria 2025",
+            location: "Eisenstadt, Austria",
+            date: "April 2025",
+        },
+    ],
 };
 
 import logoInline from "@/assets/logo.png?inline";
@@ -284,6 +323,11 @@ import logoInline from "@/assets/logo.png?inline";
             .language-item strong {
                 font-weight: 700;
             }
+
+            .talk-meta-row {
+                display: flex;
+                justify-content: space-between;
+            }
         </style>
     </head>
     <body>
@@ -343,7 +387,13 @@ import logoInline from "@/assets/logo.png?inline";
                             resumeData.education.map((edu) => (
                                 <div class="education-item">
                                     <div class="experience-title">
-                                        {edu.degree}, {edu.institution} ({edu.startDate} – {edu.endDate})
+                                        {edu.degree}, {edu.institution}
+                                    </div>
+                                    <div class="talk-meta-row">
+                                        <div>{edu.location}</div>
+                                        <div>
+                                            {edu.startDate} – {edu.endDate}
+                                        </div>
                                     </div>
                                 </div>
                             ))
@@ -364,6 +414,90 @@ import logoInline from "@/assets/logo.png?inline";
                         }
                     </div>
                 </div>
+
+                {
+                    resumeData.certifications.length > 0 && (
+                        <div class="section-row">
+                            <div class="section-label">Certifications</div>
+                            <div class="section-content">
+                                {resumeData.certifications.map((cert) => (
+                                    <div class="education-item">
+                                        <div class="experience-title">{cert.name}</div>
+                                        <div class="talk-meta-row">
+                                            <div>{cert.issuer}</div>
+                                            <div>{cert.date}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                }
+
+                {
+                    resumeData.projects.length > 0 && (
+                        <div class="section-row">
+                            <div class="section-label">Projects</div>
+                            <div class="section-content">
+                                {resumeData.projects.map((project) => (
+                                    <div class="experience-item">
+                                        <div class="experience-title">{project.name}</div>
+                                        <div>{project.description}</div>
+                                        {project.highlights && (
+                                            <ul>
+                                                {project.highlights.map((highlight) => (
+                                                    <li>{highlight}</li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                        <div>
+                                            {project.url && (
+                                                <a href={`https://${project.url}`} target="_blank" rel="noreferrer">
+                                                    {project.url}
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="12"
+                                                        height="12"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <g fill="none">
+                                                            <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                            <path
+                                                                fill="currentColor"
+                                                                d="M11 6a1 1 0 1 1 0 2H5v11h11v-6a1 1 0 1 1 2 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm9-3a1 1 0 0 1 1 1v5a1 1 0 1 1-2 0V6.414l-8.293 8.293a1 1 0 0 1-1.414-1.414L17.586 5H15a1 1 0 1 1 0-2Z"
+                                                            />
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                }
+
+                {
+                    resumeData.talks.length > 0 && (
+                        <div class="section-row">
+                            <div class="section-label">Talks</div>
+                            <div class="section-content">
+                                {resumeData.talks.map((talk) => (
+                                    <div class="education-item">
+                                        <div class="experience-title">{talk.title}</div>
+                                        <div class="talk-meta-row">
+                                            <div>
+                                                {talk.event} - {talk.location}
+                                            </div>
+                                            <div>{talk.date}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                }
 
                 <div class="section-row">
                     <div class="section-label">Languages</div>
