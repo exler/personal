@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import DividerDashed from "@/components/DividerDashed.astro";
+import Section from "@/components/Section.astro";
+import Subheading from "@/components/Subheading.astro";
+import Subtext from "@/components/Subtext.astro";
+import TalkLinks from "@/components/TalkLinks.astro";
+---
+
+<Layout title="Talks | Kamil Marut">
+    <Subheading>Talks</Subheading>
+    <Subtext>Watch me gesticulate a lot.</Subtext>
+    <TalkLinks
+        items={[
+            {
+                title: "Achieving Zero-Downtime Migrations in High-Traffic Django Systems",
+                event: "Django Vienna 06-2025",
+                date: new Date("2025-06-11"),
+                slidesLink: "https://talks.kamilmarut.com/2025-django-vienna/",
+            },
+            {
+                title: "Demystifying Python Modules and Imports: How Imports Really Work in Python",
+                event: "PyCon Austria 2025",
+                date: new Date("2025-04-06"),
+                slidesLink: "https://talks.kamilmarut.com/2025-pycon-austria/",
+                videoLink: "https://youtu.be/qQQT88mpmms",
+            },
+        ]}
+        class="pt-6"
+    />
+</Layout>

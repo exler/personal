@@ -1,10 +1,23 @@
 ---
+import "@fontsource/spectral";
+import "@fontsource-variable/eb-garamond";
+
+import { Image } from "astro:assets";
+
+import backgroundImage from "@/assets/background-image.png";
+import DividerDashed from "@/components/DividerDashed.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+
 interface Props {
     title?: string;
     description?: string;
 }
 
-const { title = "Kamil Marut", description = "Founder and solutions architect at Majikode. Specializing in development of high-performance and maintainable digital products." } = Astro.props;
+const {
+    title = "Kamil Marut",
+    description = "Running Majikode consulting agency. Senior data engineer at Nearform. Co-founder of WorkWave. Advocating for open-source and privacy-oriented software.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,16 +29,17 @@ const { title = "Kamil Marut", description = "Founder and solutions architect at
         <link rel="icon" type="image/png" href="/icon.png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <title>{title}</title>
-        <script data-goatcounter="https://exler.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script is:inline data-goatcounter="https://exler.goatcounter.com/count" async src="//gc.zgo.at/count.js"
+        ></script>
     </head>
-    <body class="max-w-2xl mx-2 sm:mx-auto py-8 font-sans">
-        <main>
+    <body class="max-w-3xl sm:mx-auto py-8">
+        <Image src={backgroundImage} alt="" class="w-full" />
+        <!-- <Header />
+        <DividerDashed class="my-4" /> -->
+        <main class="max-w-2xl mx-2 sm:mx-auto">
             <slot />
         </main>
-        <footer class="flex items-center justify-end gap-1 p-4 text-xs">
-            <span class="text-neutral-500">© {new Date().getFullYear()}</span>
-            <a href="/" class="text-white hover:text-[#F7AC3A]">KAMILMARUT.COM</a>
-        </footer>
+        <Footer />
     </body>
 </html>
 
@@ -34,13 +48,27 @@ const { title = "Kamil Marut", description = "Founder and solutions architect at
     @plugin "@tailwindcss/typography";
 
     :root {
-        --background: #212121;
-        --foreground: #ededed;
+        --foreground: #212121;
+        --background: #fefefe;
+        --primary: #07161d;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "EB Garamond Variable", serif;
     }
 
     body {
         color: var(--foreground);
         background: var(--background);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "Spectral", serif;
+    }
+
+    a {
+        color: var(--primary);
     }
 </style>

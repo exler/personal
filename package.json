@@ -10,8 +10,10 @@
         "lint": "biome lint ./src"
     },
     "dependencies": {
-        "@astrojs/react": "^4.4.1",
-        "astro": "^5.10.1",
+        "@astrojs/react": "4.4.2",
+        "@fontsource-variable/eb-garamond": "^5.2.7",
+        "@fontsource/spectral": "^5.2.8",
+        "astro": "5.17.1",
         "maplibre-gl": "^4.7.1",
         "puppeteer": "^24.0.0",
         "react": "^19.2.0",
