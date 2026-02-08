@@ -2,8 +2,6 @@
 const resumeData = {
     name: "Kamil Marut",
     title: "Team Lead & Full-Stack Engineer",
-    email: "kamil@kamilmarut.com",
-    phone: "+48 732 008 331",
     location: "Wrocław, Poland",
     linkedin: "linkedin.com/in/kamilmarut",
     github: "github.com/exler",
@@ -367,11 +365,16 @@ import logoInline from "@/assets/logo.png?inline";
                         <div>
                             <img src={logoInline} alt="Logo" class="logo" />
                             <h1>{resumeData.name}</h1>
-                            <p class="subtitle">{resumeData.title}, {resumeData.location}</p>
+                            <p class="subtitle">{resumeData.title}</p>
                         </div>
                         <div class="contact-info">
-                            <div>Mobile: {resumeData.phone}</div>
-                            <div>Email: <a href={`mailto:${resumeData.email}`}>{resumeData.email}</a></div>
+                            <div>Location: {resumeData.location}</div>
+                            <div>
+                                LinkedIn:{" "}
+                                <a href={`https://${resumeData.linkedin}`} target="_blank" rel="noreferrer">
+                                    {resumeData.linkedin}
+                                </a>
+                            </div>
                             <div>
                                 Website: <a href={`https://${resumeData.website}`} target="_blank" rel="noreferrer"
                                     >{resumeData.website}</a
